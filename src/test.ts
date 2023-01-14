@@ -2,7 +2,7 @@ import cheerio from "cheerio";
 import fetch from "node-fetch";
 import { foodClubParser } from "./foodclub-parser";
 
-const url = "https://www.foodclub.ru/detail/solyanka-sbornaya-myasnaya/";
+const url = "https://en.wikipedia.org/wiki/Cricket_World_Cup";
 
 const test = async () => {
   const html = await fetch(url).then((x) => x.textConverted());
