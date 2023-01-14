@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/test.ts"],
+  "sourcesContent": ["import cheerio from \"cheerio\";\nimport fetch from \"node-fetch\";\nimport { foodClubParser } from \"./foodclub-parser\";\n\nconst url = \"https://www.foodclub.ru/detail/solyanka-sbornaya-myasnaya/\";\n\nconst test = async () => {\n  const html = await fetch(url).then((x) => x.textConverted());\n  const $ = cheerio.load(html);\n\n  console.log(foodClubParser($, url));\n};\n\ntest();"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,qBAAoB;AACpB,wBAAkB;AAClB,6BAA+B;AAE/B,MAAM,MAAM;AAEZ,MAAM,OAAO,YAAY;AACvB,QAAM,OAAO,UAAM,kBAAAA,SAAM,GAAG,EAAE,KAAK,CAAC,MAAM,EAAE,cAAc,CAAC;AAC3D,QAAM,IAAI,eAAAC,QAAQ,KAAK,IAAI;AAE3B,UAAQ,QAAI,uCAAe,GAAG,GAAG,CAAC;AACpC;AAEA,KAAK;",
+  "names": ["fetch", "cheerio"]
+}

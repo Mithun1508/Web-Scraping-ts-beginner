@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/foodclub-parser.ts"],
+  "sourcesContent": ["interface Ingredient {\n  amount: string;\n  unit: string;\n  name: string;\n}\n\ninterface IngredientHeader {\n  text: string\n}\n\ninterface Instruction {\n  text: string;\n  isHeader: boolean;\n}\n\nexport const foodClubParser = ($: CheerioStatic, url: string) => {\n  const recipe = {\n    description: \"\",\n    instructions: [] as Instruction[],\n    name: \"\",\n    pictureUrl: \"\",\n    servings: \"\",\n    source: \"\",\n    sourceUrl: url,\n    // example values for time type: \"Cook\" | \"Prep\" | \"Marinate\"\n    // default it to \"Cook\" if none provided by website\n    times: [] as Array<{ type: string; minutes: number }>,\n    ingredients: [] as Array<Ingredient | IngredientHeader>,\n  };\n\n  recipe.source = $('span[itemprop=\"author\"]')?.text();\n  recipe.name = $('span[itemprop=\"name\"]')?.text();\n  // etc\n\n  return recipe;\n};"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAeO,MAAM,iBAAiB,CAAC,GAAkB,QAAgB;AAfjE;AAgBE,QAAM,SAAS;AAAA,IACb,aAAa;AAAA,IACb,cAAc,CAAC;AAAA,IACf,MAAM;AAAA,IACN,YAAY;AAAA,IACZ,UAAU;AAAA,IACV,QAAQ;AAAA,IACR,WAAW;AAAA,IAGX,OAAO,CAAC;AAAA,IACR,aAAa,CAAC;AAAA,EAChB;AAEA,SAAO,UAAS,OAAE,yBAAyB,MAA3B,mBAA8B;AAC9C,SAAO,QAAO,OAAE,uBAAuB,MAAzB,mBAA4B;AAG1C,SAAO;AACT;",
+  "names": []
+}
